@@ -56,3 +56,16 @@ somethings
 
 ## Creating Ordered List or Unordered List
 
+To create an unordered list in UITextView, such as this one below: 
+* Item 1
+* Item 2
+* Item 3
+
+We can achieve this in code as shown below:  
+
+```swift
+
+["Item 1", "Item 2" , "Item 3"].toAttributedStrs().createUnorderedList().with(fontSize: 16)
+
+```
+
