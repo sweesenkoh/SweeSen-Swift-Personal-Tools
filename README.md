@@ -49,7 +49,7 @@ Below are all the extensions functions that are available in this framework
 
 ```swift
 
-somethings
+//to be updated in future 
 
 ```
 
@@ -97,5 +97,9 @@ extension Array where Element:String{
 ["Item 1", "Item 2" , "Item 3"].ul().color(with: .black).bold()
 
 ```
+
+</br></br></br>
+
+# UIView Extensions
 
 
