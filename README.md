@@ -69,3 +69,33 @@ We can achieve this in code as shown below:
 
 ```
 
+We can customise the amount of spaces that is before the bullet point, or after the bullet point, by specifying it as the parameter.
+
+```swift
+
+["Item 1", "Item 2" , "Item 3"].toAttributedStrs().createUnorderedList(tabSpaceBefore: 2 , tabSpaceAfter: 3)
+
+```
+
+Since the style used throughout the app is most likely the same, we can create another extensions to make the process of creating lists easier. 
+
+```swift
+
+extension Array where Element:String{
+
+  func ul(){ //unordered list
+    return self.toAttributedStrs().createUnorderedList(tabSpaceBefore: 2 , tabSpaceAfter: 3).color(with: .blue).with(fontSize: 12)
+  }
+
+}
+
+//now we can simply call ul() on [String]
+["Item 1", "Item 2" , "Item 3"].ul()
+
+
+//We can still customise any of the properties, for example
+["Item 1", "Item 2" , "Item 3"].ul().color(with: .black).bold()
+
+```
+
+
