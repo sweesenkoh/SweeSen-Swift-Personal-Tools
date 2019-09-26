@@ -46,6 +46,9 @@ public extension NSAttributedString{
         
     }
     
+    func with(text:String){
+    }
+    
     func bold()->NSAttributedString{
         
         var originalAttributes = self.attributes(at: 0, effectiveRange: nil)
