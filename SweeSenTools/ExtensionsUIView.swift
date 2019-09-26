@@ -149,6 +149,20 @@ public extension UIView{
     }
 }
 
+public extension UIImageView{
+    
+    func setUIImage(named: String)->UIImageView{
+        self.image = UIImage(named: named)
+        return self
+    }
+    
+    func setContentMode(_ contentMode:UIView.ContentMode)->UIImageView{
+        self.contentMode = contentMode
+        return self
+    }
+    
+}
+
 
 
 public class ClosureSleeve{

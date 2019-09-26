@@ -52,6 +52,17 @@ public extension NSAttributedString{
         return newString
     }
     
+    func withLineSpacing(_ lineSpacing:CGFloat)->NSAttributedString{
+        
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = lineSpacing
+        
+        let attrString = NSMutableAttributedString(attributedString: self)
+        attrString.addAttribute(.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attrString.length))
+        return attrString
+    }
+    
+    
     func bold()->NSAttributedString{
         
         var originalAttributes = self.attributes(at: 0, effectiveRange: nil)
