@@ -10,6 +10,7 @@ import Foundation
 
 
 
+
 //adding styles to String to become Attributed String
 public extension String {
     
@@ -48,7 +49,7 @@ public extension NSAttributedString{
     
     func modify(text:String)->NSAttributedString{
         let originalAttributes = self.attributes(at: 0, effectiveRange: nil)
-        let newString = NSAttributedString(string: text, attributes: originalAttributes)
+        let newString = NSAttributedString(string: text == "" ? " " : text, attributes: originalAttributes)
         return newString
     }
     
@@ -81,6 +82,22 @@ public extension NSAttributedString{
         fontAttribute.forEach { (k,v) in originalAttributes[k] = v }
         let newString = NSAttributedString(string: self.string, attributes: originalAttributes)
         return newString
+    }
+    
+    func bold(weight: UIFont.Weight)->NSAttributedString{
+
+        var originalFont:UIFont?
+        var originalAttributes = self.attributes(at: 0, effectiveRange: nil)
+        for attr in originalAttributes {
+            if let thisFont = attr.value as? UIFont{
+                originalFont = thisFont
+            }
+        }
+        
+        let fontAttribute:[NSAttributedString.Key:Any] = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: originalFont?.pointSize ?? 20, weight: weight)]
+        fontAttribute.forEach { (k,v) in originalAttributes[k] = v }
+        let myString = NSMutableAttributedString(string:self.string, attributes: fontAttribute)
+        return myString
     }
     
     func italic()->NSAttributedString{
