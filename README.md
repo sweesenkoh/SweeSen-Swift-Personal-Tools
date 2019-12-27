@@ -35,7 +35,13 @@ Below is an example:
 
 let label : UILabel = {
   let l = UILabel()
-  l.attributedString = "Hello World".with(fontSize: 25).color(with: .blue).align(.center).bold().italic()
+  l.attributedString = "Hello World"
+      .with(fontSize: 25)
+      .color(with: .blue)
+      .align(.center)
+      .bold()
+      .italic()
+      
   return l
 }()
 
@@ -84,7 +90,11 @@ Since the style used throughout the app is most likely the same, we can create a
 extension Array where Element:String{
 
   func ul(){ //unordered list
-    return self.toAttributedStrs().createUnorderedList(tabSpaceBefore: 2 , tabSpaceAfter: 3).color(with: .blue).with(fontSize: 12)
+    return self
+      .toAttributedStrs()
+      .createUnorderedList(tabSpaceBefore: 2 , tabSpaceAfter: 3)
+      .color(with: .blue)
+      .with(fontSize: 12)
   }
 
 }
