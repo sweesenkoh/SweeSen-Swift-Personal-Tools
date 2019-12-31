@@ -112,4 +112,47 @@ extension Array where Element:String{
 
 # UIView Extensions
 
+## 1. Easier constraints layout
+Laying out views using constraint layout usually involves a lot of code. There are many different ways of coding out, below is a typical example:
+
+```swift
+
+let backgroundView:UIView = {
+
+  let backgroundView = UIView()
+  backgroundView.backgroundColor = .blue
+  return backgroundView
+
+}()
+
+
+func addBackgroundView(){
+  
+  view.addSubView(backgroundView)
+  backgroundView.translateAutoResizingMasksIntoConstraints = false
+  backgroundView.topAnchor.constraint(equalTo: view.topAnchor, constant: 4).isActive = true
+  backgroundView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.3).isActive = true
+  backgroundView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15).isActive = true
+  backgroundView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -12).isActive = true
+}
+
+```
+</br>
+
+With the extensions on UIView in this tool, laying out UIViews will be a much easier process. Here is the same process done with the use of the extensions:
+
+```swift
+
+func addBackgroundView(){
+
+  backgroundView = UIView()
+    .color(with: .blue)
+    .addView(to: self.view)
+    .setConstraint(of: .topAnchor, on: view.topAnchor, padding: 4)
+    .setConstraint(of: .heightAnchor, on: view.heightAnchor, multiplier: 0.3)
+    .setConstraint(of: .leftAnchor, on: view.leftAnchor, padding: 15)
+    .setConstraint(of: .rightAnchor, on: view.rightAnchor, padding: 12)
+}
+```
+
 
