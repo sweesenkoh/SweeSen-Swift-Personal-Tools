@@ -9,8 +9,13 @@ These are some of the useful extensions to make some process of IOS development 
 
 # String Extensions 
 
+</br>
+
+## 1. Changing Text Properties on UILabel or UITextView
+
 Usually when we attempt to change any text properties of UILabel or UITextView, there are quite a lot of lines of code written just to change a few properties of the text, such as text size, text color and so on. Below is one example of code setting up UILabel:
 
+#### Without Swee Sen Tools
 ```swift 
 
 let label : UILabel = {
@@ -29,7 +34,8 @@ let label : UILabel = {
 For the string extensions in this framework, everything is first converted into NSAttributedString, then doing all the manipulations on the string. Afterwards, we then assign our attributedString to the attributedString property of the UILabel or UITextView. 
 
 </br>
-Below is an example:
+
+#### With Swee Sen Tools
 
 ```swift 
 
@@ -59,8 +65,9 @@ Below are all the extensions functions that are available in this framework
 
 ```
 
+</br></br>
 
-## Creating Ordered List or Unordered List
+## 2. Creating Ordered List or Unordered List
 
 To create an unordered list in UITextView, such as this one below: 
 * Item 1
@@ -115,6 +122,8 @@ extension Array where Element:String{
 ## 1. Easier constraints layout
 Laying out views using constraint layout usually involves a lot of code. There are many different ways of coding out, below is a typical example:
 
+
+#### Without Swee Sen Tools
 ```swift
 
 let backgroundView:UIView = {
@@ -140,6 +149,8 @@ func addBackgroundView(){
 </br>
 
 With the extensions on UIView in this tool, laying out UIViews will be a much easier process. Here is the same process done with the use of the extensions:
+
+#### With Swee Sen Tools
 
 ```swift
 
