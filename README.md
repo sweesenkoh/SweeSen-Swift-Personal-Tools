@@ -1,6 +1,6 @@
 # SweeSen Swift Personal Tools
 
-These are some of the useful extensions to make some process of IOS development easier and faster. This framework mainly consists of extensions of the two following area:
+These are some of the useful extensions to make some process of IOS development easier and faster. This file mainly consists of extensions of the two following area:
 
 * String Extentions
 * UIView Extentions 
@@ -31,7 +31,7 @@ let label : UILabel = {
 }()
 
 ```
-For the string extensions in this framework, everything is first converted into NSAttributedString, then doing all the manipulations on the string. Afterwards, we then assign our attributedString to the attributedString property of the UILabel or UITextView. 
+For the string extensions, everything is first converted into NSAttributedString, then doing all the manipulations on the NSAttributedString. Afterwards, we then assign our attributedString to the attributedString property of the UILabel or UITextView. 
 
 </br>
 
@@ -57,7 +57,7 @@ This provide a simplified solution to setting text properties on UILabel or UITe
 
 Therefore, this extensions helps to simplify and shorten the code on setting text properties on the UILabel or UITextView.
 
-Below are all the extensions functions that are available in this framework
+Below are all the extensions functions that are available in this extentions file
 
 ```swift
 
